@@ -12,15 +12,17 @@ class WatcherCache:
         """Create the directory if it doesn't already exist."""
         self.basedir = os.path.dirname(__file__)
         self.cachedir = os.path.join(self.basedir, config.cache_dir)
+        self.did_cache_dir_exist = True
 
         if not os.path.exists(self.cachedir):
             os.makedirs(self.cachedir)
+            self.did_cache_dir_exist = False
 
     def __getitem__(self, key: str) -> str:
         """
         Get file content associated with key.
 
-        Raises KeyError if no key associated can be found.
+        Returns None if no key associated can be found.
         """
         filename = self.key_to_filename(key)
 
@@ -28,7 +30,7 @@ class WatcherCache:
             with open(filename, 'r') as item:
                 return item.read().strip()
         except FileNotFoundError:
-            raise KeyError(f'File associated with key `{key}` not found')
+            return None
 
     def __setitem__(self, key: str, contents: str):
         """Sets file content associated with key."""
