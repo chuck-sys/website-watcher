@@ -18,6 +18,9 @@ For your environmental variables, make sure the following are set:
 - `TO_EMAIL`: Email you send the data to. You should probably have control over
   this email as well.
 
+Make sure that you also have a SendGrid account active (obviously). The free
+tier works nicely.
+
 ## Running
 
 You are meant to place the commands to run it in a cron file and have it run
