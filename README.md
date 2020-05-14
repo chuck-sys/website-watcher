@@ -14,8 +14,9 @@ For your environmental variables, make sure the following are set:
 - `CACHE_DIR`: Directory (relative to this one) you want to place cached HTML
   files (that have changed) for comparing later. This directory will be changed
   as frequently as you run the program.
-- `FROM_EMAIL`: Email you send from
-- `TO_EMAIL`: Email you send the data to
+- `FROM_EMAIL`: Email you send from, that you have control over, of course.
+- `TO_EMAIL`: Email you send the data to. You should probably have control over
+  this email as well.
 
 ## Running
 
@@ -35,3 +36,7 @@ Google Canada,https://www.google.ca
 Facebook,https://www.facebook.com
 reddit,https://www.reddit.com
 ```
+
+## Screenshots
+
+![CPSC 340 Screenshot](public/cpsc340-diff.png)
