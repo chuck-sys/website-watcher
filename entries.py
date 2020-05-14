@@ -51,7 +51,7 @@ class Entries:
                 # There's a small chance that the HTML isn't well formed. And
                 # in that case, we sigh and be unhappy.
                 pass
-            self.entries[name]['current_content'] = content
+            self.entries[name]['current_content'] = content.strip()
             # We don't need to parse cache because by default it should have
             # been pretty beforehand
             self.entries[name]['cached_content'] = cache[name]
